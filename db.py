@@ -19,7 +19,7 @@ class Recipe:
             "steps": self.steps,
             "ingredients": self.ingredients
         }
-    
+        
     # PATCH
     def update(self, name=None, steps=None, ingredients=None):
         if name: self.name = name

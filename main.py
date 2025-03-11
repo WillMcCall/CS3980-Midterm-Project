@@ -1,28 +1,16 @@
 from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 import db
 
 app = FastAPI()
-
-templates = Jinja2Templates(directory="templates")
 
 # In memory database
 # This should preserve the database upon page reload
 # This WON'T preserve the database upon SERVER reload
 recipes_db: list[db.Recipe] = []
     
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse(
-        "index.html", 
-        {
-            "request": request,
-            "data": recipes_db
-        }
-    )
-    
+        
 @app.get("/api/recipes")
 def get_recipes():
     responses: list[dict] = []
@@ -80,3 +68,5 @@ def delete_recipe(recipe_id: int):
         "status": 200,
         "message": f"deleted recipe with id {recipe_id}"
     }
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
