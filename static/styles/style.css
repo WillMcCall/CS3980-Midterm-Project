@@ -96,3 +96,51 @@ button:hover {
 input .stuff {
     text-align: left;
 }
+
+.recipe-card {
+    background: #222;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    max-width: 1000px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+.recipe-card h2 {
+    font-size: 24px;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+
+.ingredients-section, .steps-section {
+    flex: 1;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #eee;
+    text-transform: uppercase;
+}
+
+.ingredient-list, .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient-list li, .step-list li {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+

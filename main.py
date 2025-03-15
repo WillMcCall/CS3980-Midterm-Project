@@ -14,9 +14,9 @@ recipes_db: list[db.Recipe] = []
 @app.get("/api/recipes")
 def get_recipes():
     responses: list[dict] = []
-    for recipe in recipes_db:
-        if recipe is not None:            
-            responses.append(recipe.read())
+    for i in range(len(recipes_db)):
+        if recipes_db[i] is not None:
+            responses.append(recipes_db[i].read(i))
         
     return responses
 
@@ -31,9 +31,9 @@ def get_recipe(recipe_id: int):
     return {
         "status": 200,
         "message": "recipe found!",
-        "data": recipes_db[recipe_id].read()
+        "data": recipes_db[recipe_id].read(recipe_id)
     }
-        
+
 @app.post("/api/recipes")
 def create_recipe(recipe: db.RecipeModel):
     recipes_db.append(db.Recipe(recipe.name, recipe.steps, recipe.ingredients))
@@ -41,7 +41,7 @@ def create_recipe(recipe: db.RecipeModel):
     return {
         "status": 200,
         "message": "recipe created successfully",
-        "data": recipes_db[-1].read()
+        "data": recipes_db[-1].read(len(recipes_db)-1)
     }
     
 @app.patch("/api/recipes/{recipe_id}")

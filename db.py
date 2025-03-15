@@ -13,8 +13,9 @@ class Recipe:
         self.ingredients = ingredients
     
     # GET
-    def read(self):
+    def read(self, id):
         return {
+            "id": id,
             "name": self.name,
             "steps": self.steps,
             "ingredients": self.ingredients
