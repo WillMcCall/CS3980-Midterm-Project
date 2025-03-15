@@ -14,7 +14,7 @@
 ![Second Recipe](./static/images/two-recipes.png)
 <br>
 <h3>Deleting a Recipe</h3>
-![Deleting Recipe](./static/images/delete-recipe.png)
+![Deleting Recipe](/static/images/delete-recipe.png)
 <br>
 <h3>Reading all Recipes (Page Reload)</h3>
 ![Page Reload](./static/images/page-reload.png)
