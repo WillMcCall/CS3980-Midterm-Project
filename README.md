@@ -2,7 +2,6 @@
 <h2>This simple web app allows you to create recipes with varying numbers of steps and ingredients</h2>
 <br>
 <h3>The initial page:</h3>
-![Initial Page](static/images/initial-page.png)
 ![Initial Page](https://raw.githubusercontent.com/WillMcCall/CS3980-Midterm-Project/main/static/images/initial-page.png)
 <br>
 <h3>Creating pizza recipe:</h3>
